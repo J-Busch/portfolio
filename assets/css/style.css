@@ -1,0 +1,692 @@
+/*!
+Theme Name: Joel Busch Portfolio
+Theme URI: http://underscores.me/
+Author: Joel Busch
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: jb-portfolio
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Joel Busch Portfolio is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+# Theme specific styles
+--------------------------------------------------------------*/
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+	/* Make sure select elements fit in widgets. */
+}
+
+.widget select {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+	/* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+
+.navbar-nav > li.current_page_item a,
+.navbar--nav > li.current_page_parent a {
+	color: white;
+}
+
+
+/***************************
+	THEME SPECIFIC STYLES
+***************************/
+
+
+/***************************
+			GENERAL
+***************************/
+
+body {
+	font-family: 'Raleway', Helvetica, sans-serif;
+    font-size: 16px;
+	color: #1b2331;
+}
+h1,h2,h3,h4,h5,h6,p,button,a,label {
+	-webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-weight: bold;
+}
+a {
+	text-decoration: underline;
+	color: #dae5c2;
+}
+a:hover {
+	color: #fff;
+}
+a:active, a:focus {
+	color: #a9b68d;
+}
+a.dark-link {
+	color: #394867;
+}
+a.dark-link:hover, a.dark-link:active, a.dark-link:focus {
+	color: #1b2331;
+}
+
+.logged-in .navbar-fixed-top { top: 32px; }
+section { padding: 60px 0; }
+
+.navbar-wrapper .navbar {
+	background: #1b2331;
+}
+.navbar-inverse .navbar-nav > li > a {
+	text-decoration: none;
+	color: #dee5cf;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+	text-decoration: none;
+	color: #fff;
+}
+.navbar-inverse .navbar-brand {
+	font-size: 36px;
+	color: #dee5cf;
+	text-decoration: none;
+}
+
+.row.is-table-row {
+	display: table;
+}
+.row.is-table-row [class*="col-"] {
+	float: none;
+	display: table-cell;
+	vertical-align: top;
+}
+
+blockquote {
+	background: #f9f9f9;
+	border-left: 10px solid #ccc;
+	font-family: Georgia, serif;
+	font-size: 18px;
+	font-style: italic;
+	text-align: left;
+	margin: 8px 0;
+	padding: 12px 25px 12px 50px !important;
+	line-height: 1.45;
+	position: relative;
+	color: #1b2331;
+}
+blockquote:before {
+	display: block;
+	content: "\201C";
+	font-size: 80px;
+	position: absolute;
+	left: 0;
+	top: -20px;
+	color: #1b2331;
+}
+
+footer {
+	text-align: center;
+	background: #1b2331;
+	height: 48px;
+	width: 100%;
+	padding-top: 11px;
+}
+footer a {
+	text-decoration: none;
+	color: #dee5cf;
+	font-size: 20px;
+}
+footer a:hover, footer a:active {
+	text-decoration: none;
+	color: #fff;
+}
+
+a.btn.btn-primary,
+button.btn.btn-primary,
+input.btn.btn-primary {
+	background-color: #687082;
+	border: 1px solid #394867;
+}
+a.btn.btn-primary:hover,
+button.btn.btn-primary:hover,
+input.btn.btn-primary:hover {
+	background-color: #5c626e;
+	border: 1px solid #394867;
+}
+
+a.btn.btn-info,
+button.btn.btn-info,
+input.btn.btn-info {
+	background-color: #9A788C;
+	border: 1px solid #7A4263;
+}
+a.btn.btn-info:hover,
+button.btn.btn-info:hover,
+input.btn.btn-info:hover {
+	background-color: #836A79;
+	border: 1px solid #7A4263;
+}
+
+a.btn { text-decoration: none; }
+
+
+/***************************
+		ABOUT SECTION
+***************************/
+
+#about {
+	padding-top: 100px;
+	background: #5c626e;
+	background: -webkit-linear-gradient(45deg, #5c626e 0%, #7a4263 100%);
+	background: -o-linear-gradient(45deg, #5c626e 0%, #7a4263 100%);
+	background: -moz-linear-gradient(45deg, #5c626e 0%, #7a4263 100%);
+	background: linear-gradient(45deg, #5c626e 0%, #7a4263 100%);
+	min-height: 550px;
+}
+#about p,
+#about h1,
+#about h3,
+#about h4 { color: #fff; }
+#about small { color: #ddd; }
+
+#about article {
+	width: 100%;
+}
+#about h1 {
+	margin-top: 0;
+}
+
+.portrait {
+	text-align: center;
+}
+.portrait img {
+	width: 70%;
+	border-radius: 50%;
+}
+
+.ava {
+	display: inline-block;
+	padding: 4px 8px;
+	margin-bottom: 16px;
+	font-size: 12px;
+	color: #fff;
+	background: #687082;
+	border: 1px solid #394867;
+	border-radius: 5px;
+}
+.ava-open span {
+	color: #5cb85c;
+}
+.ava-none span {
+	color: #d9534f;
+}
+
+
+/***************************
+	TESTIMONIALS SECTION
+***************************/
+
+#testimonials {
+	text-align: center;
+	background: #f1ede4;
+}
+
+.quote-wrap {
+	margin: 30px 0;
+}
+
+
+/***************************
+			MY WORK
+***************************/
+
+#work {
+	text-align: center;
+}
+
+hr {
+	border-top: 1px solid #ddd;
+}
+
+.work-type-block {
+	padding: 15px 0;
+}
+
+.pen-container{
+	margin: 30px 0;
+}
+
+
+/***************************
+			CONTACT
+***************************/
+
+#contact {
+	text-align: center;
+	background: #5c626e;
+	background: -webkit-linear-gradient(45deg, #5c626e 0%, #7a4263 100%);
+	background: -o-linear-gradient(45deg, #5c626e 0%, #7a4263 100%);
+	background: -moz-linear-gradient(45deg, #5c626e 0%, #7a4263 100%);
+	background: linear-gradient(45deg, #5c626e 0%, #7a4263 100%);
+	padding-bottom: 100px;
+}
+#contact .form-group label {
+	float: left;
+}
+#contact h1,
+#contact h3,
+#contact label { color: #fff; }
+
+span.wpcf7-not-valid-tip {
+	color: #f44;
+	font-size: 1em;
+	font-weight: normal;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 4px;
+}
+.wpcf7-form-control-wrap { position: unset; }
+.form-group { position: relative; }
+
+div.wpcf7-response-output {
+	background: #fff;
+	border-radius: 3px;
+	padding: 8px;
+	margin-top: 50px;
+}
+div.wpcf7-validation-errors {
+	border: 1px solid #f44;
+	color: #f44;
+}
+
+
+/******************
+	COMPONENTS
+******************/
+
+.card {
+	width: 100%;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	background: #f9f9f9;
+}
+.card.card-spaced {
+	margin: 30px 0 0;
+}
+.card .card-image {
+	width: 100%;
+	border-bottom: 1px solid #aaa;
+	border-top: 1px solid #aaa;
+	margin: 16px 0 0;
+}
+.card .card-text {
+	background: #f9f9f9;
+	padding: 8px 16px 16px;
+}
+
+
+/***************************
+		MEDIA QUERIES
+***************************/
+
+@media screen and ( max-width: 782px ) {
+	.logged-in .navbar-fixed-top {
+		top: 46px;
+	}
+}
+
+@media screen and ( max-width: 600px ) {
+	.logged-in .navbar-fixed-top {
+		top: 42px;
+	}
+}
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 767px) {
+	#about h1 {
+		text-align: center;
+		margin-top: 16px;
+	}
+	#about .ava-wrap {
+		text-align: center;
+	}
+	#about {
+		padding-top: 60px;
+	}
+	.row.is-table-row {
+		display: block;
+	}
+	.row.is-table-row [class*="col-"] {
+		float: none;
+		display: block;
+		vertical-align: unset;
+	}
+	blockquote {
+		border-left: none;
+	}
+	#work .card {
+		border-radius: 0;
+		border-right: none;
+		border-left: none;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	blockquote p {
+		font-size: 16px;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	blockquote p {
+		font-size: 20px;
+    }
+}
